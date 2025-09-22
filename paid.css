@@ -1,0 +1,915 @@
+body {
+  margin: 0px;
+  background-color: black;
+}
+
+section,
+h1 {
+  scroll-margin-top: 250px;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  background-color: #2c2c2c;
+  border: 1px solid black;
+  z-index: 50;
+}
+
+header h1 {
+  color: #EE4B2B;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header img {
+  width: 40px;
+  margin-left: 50px;
+}
+
+.web-header a {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+  color: #EE4B2B;
+  padding: 10px 10px;
+  border-radius: 5px;
+  transition: all 0.5s;
+  font-size: 20px;
+}
+
+.web-header a:hover {
+  color: white;
+  background-color: #EE4B2B;
+}
+
+.web-button button {
+  height: 40px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  background-color: #EE4B2B;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  padding: 10px 40px 10px 16px;
+  background: transparent;
+  border: 1px solid #2c2c2c;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 280px;
+  transition: all 0.5s ease;
+  color: white;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #EE4B2B;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2c2c2c;
+}
+
+.web-button button:hover {
+  background-color: white;
+  color: #EE4B2B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #EE4B2B;
+}
+
+.sub-nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  gap: 40px;
+}
+
+.sub-header {
+  display: flex;
+  align-items: center;
+}
+
+.sub-header h4 {
+  margin: 0 10px;
+  color: #bbbbbb;
+}
+
+.sub-header a {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 5px;
+  color: #EE4B2B;
+  padding: 10px 10px;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.sub-header a:hover {
+  color: white;
+  background-color: #EE4B2B;
+}
+
+main {
+  margin-top: 10px;
+  grid-template-columns: 20% 80%;
+  display: grid;
+  border: 1px solid black;
+  color: white;
+}
+
+main h1 {
+  border-bottom: 1px dotted #2c2c2c;
+  font-size: 40px;
+  background: linear-gradient(10deg, white, #EE4B2B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.side-nav {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: sticky;
+  top: 220px;
+  align-self: start;
+}
+
+.side-nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #EE4B2B;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border-bottom: 1px dotted #2c2c2c;
+  transition: all 0.5s;
+}
+
+.side-nav a img {
+  width: 24px;
+}
+
+.side-nav a:hover {
+  background-color: #EE4B2B;
+  color: white;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 2% 2% 10% 2%;
+}
+
+.game-card {
+  background: #2c2c2c;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+}
+
+.game-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.game-card:hover .game-image img {
+  transform: scale(1.1);
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.game-card:hover .game-overlay {
+  opacity: 1;
+}
+
+.btn-quick-view {
+  background: #EE4B2B;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.game-info {
+  padding: 24px;
+}
+
+.game-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.game-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.stars i {
+  color: orange;
+  font-size: 14px;
+}
+
+.rating-text {
+  color: white;
+  font-size: 14px;
+}
+
+.game-price {
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.game-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background: #EE4B2B;
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px #EE4B2B;
+  background-color: white;
+  color: #EE4B2B;
+}
+
+.btn-secondary {
+  background-color: #EE4B2B;
+  color: white;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px #EE4B2B;
+  background-color: white;
+  color: #EE4B2B;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.filter {
+  margin: 2% 2% 2% 2%;
+  display: flex;
+  gap: 10px;
+}
+
+.filter button {
+  background-color: #EE4B2B;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.filter button:hover {
+  background-color: white;
+  color: #EE4B2B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #EE4B2B;
+}
+
+#trailers {
+  display: grid;
+  border: 1px solid black;
+  margin: 2% 2% 10% 2%;
+  cursor: pointer;
+}
+
+#trailers article {
+  border-radius: 10px;
+  overflow: hidden;
+  outline: none;
+  color: white;
+}
+
+#trailers video {
+  margin: 0;
+  width: 100%;
+  display: block;
+}
+
+.sale-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 2% 2% 10% 2%;
+}
+
+.sale-card {
+  position: relative;
+  background: #2c2c2c;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.sale-card a {
+  text-decoration: none;
+}
+
+.sale-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #EE4B2B;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.sale-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.sale-info {
+  padding: 16px;
+}
+
+.sale-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.price-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.original-price {
+  color: white;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.sale-price {
+  color: #00ff00;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+#ad-section {
+  margin: 2% 2% 10% 2%;
+  background: black;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+#ad-section:hover {
+  transform: translateY(-3px);
+}
+
+.ad-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.ad-banner img {
+  width: 500px;
+  border-radius: 10px;
+}
+
+.ad-content {
+  color: white;
+  max-width: 500px;
+}
+
+.ad-content h2 {
+  color: #EE4B2B;
+  margin-bottom: 10px;
+}
+
+.ad-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ad-content button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #EE4B2B;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ad-content button:hover {
+  background-color: white;
+  color: #EE4B2B;
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #EE4B2B;
+  color: white;
+  margin-left: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn-link:hover {
+  background-color: white;
+  color: #EE4B2B;
+  transform: translateY(-3px);
+}
+
+.genres-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  margin: 2% 2% 10% 2%;
+}
+
+.genre-card {
+  position: relative;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.genre-card:hover {
+  transform: translateY(-4px);
+}
+
+.genre-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.genre-card:hover img {
+  transform: scale(1.1);
+}
+
+.genre-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.genre-overlay h3 {
+  color: white;
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.genre-overlay i {
+  color: white;
+  font-size: 32px;
+}
+
+.footer {
+  background: #1a1a1a;
+  border-top: 1px solid #2c2c2c;
+  margin-top: 64px;
+  padding: 48px 32px 32px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.footer-column h4 {
+  color: #EE4B2B;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.5s ease;
+}
+
+.footer-column a:hover {
+  color: #EE4B2B;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #EE4B2B;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+.social-links a:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+.social-links a i {
+  color: white;
+}
+
+.social-links a:hover i {
+  color: #EE4B2B;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333333;
+  padding-top: 32px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #666666;
+}
+
+/*-------------------------------------------------------------changes changes changes if we no need we need to take it-----------------------*/
+/* Medium devices: tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  section,
+  h1 {
+    scroll-margin-top: 250px;
+  }
+  header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  header .logo {
+    margin-bottom: 10px;
+  }
+
+  header img {
+    width: 35px;
+    margin-left: 0;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  .web-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .web-header a {
+    font-size: 16px;
+    padding: 6px 8px;
+  }
+
+  .web-button button {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  .sub-nav {
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    top: 80px;
+  }
+
+  .sub-header h4 {
+    font-size: 14px;
+  }
+
+  .sub-header a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  main {
+    display: block;
+  }
+
+  .side-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    top: 0;
+    padding: 10px 0;
+  }
+
+  .side-nav a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  .games-grid,
+  .sale-grid,
+  .genres-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #hottrendings {
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: auto;
+  }
+
+  .carousel-container {
+    height: 300px;
+  }
+
+  .slide-content h3 {
+    font-size: 28px;
+  }
+
+  .slide-price {
+    font-size: 16px;
+  }
+
+  .slide-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .ad-banner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ad-banner img,
+  .ad-content {
+    max-width: 90%;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  footer {
+    padding: 32px 16px;
+  }
+}
+/* Small devices: mobile (up to 767px) */
+@media screen and (max-width: 767px) {
+
+  section,
+  h1 {
+    scroll-margin-top: 250px;
+  }
+
+  header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  header .logo {
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  .web-header {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .web-header a {
+    font-size: 14px;
+    padding: 5px 6px;
+  }
+
+  .sub-nav {
+    top: 75px;
+  }
+
+  #hottrendings {
+    grid-template-columns: repeat(1fr);
+    grid-template-rows: auto;
+  }
+
+  #hottrendings1 {
+    display: none;
+  }
+
+  .web-button button {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 5px 0;
+  }
+
+  .sub-nav {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .sub-header h4 {
+    font-size: 12px;
+  }
+
+  .sub-header a {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  main {
+    display: block;
+    margin: 0;
+  }
+
+  .side-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    top: 0;
+    padding: 5px 0;
+  }
+
+  .side-nav a {
+    font-size: 12px;
+    padding: 5px 6px;
+  }
+
+  .games-grid,
+  .sale-grid,
+  .genres-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #hottrendings {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .carousel-container {
+    height: 200px;
+  }
+
+  .slide-content h3 {
+    font-size: 20px;
+  }
+
+  .slide-price {
+    font-size: 14px;
+  }
+
+  .slide-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .ad-banner {
+    flex-direction: column;
+  }
+
+  .ad-banner img,
+  .ad-content {
+    max-width: 100%;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  footer {
+    padding: 32px 16px;
+  }
+}
