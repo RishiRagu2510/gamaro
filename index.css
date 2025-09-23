@@ -1,164 +1,218 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: black;
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
 }
 
 #bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(50%) contrast(90%) saturate(70%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%) contrast(90%) saturate(70%);
 }
 
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Divider with OR */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #aaa;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #444;
+}
+
+.divider:not(:empty)::before {
+    margin-right: 10px;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 10px;
 }
 
 .auth-container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 380px;
-  padding: 40px 30px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  color: white;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: white;
 }
 
 .auth-container h1 {
-  margin-bottom: 25px;
-  font-size: 28px;
-  letter-spacing: 1px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    letter-spacing: 1px;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 input {
-  padding: 14px 16px;
-  width: 100%;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  font-size: 16px;
+    padding: 14px 16px;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
 }
 
 button {
-  padding: 14px;
-  border-radius: 6px;
-  border: none;
-  background: #EE4B2B;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+    padding: 14px;
+    border-radius: 6px;
+    border: none;
+    background: #EE4B2B;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
-  background: #d43d20;
+    background: #d43d20;
+}
+
+/* Google button */
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    color: #444;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.google-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.google-btn:hover {
+    background: #f5f5f5;
 }
 
 .remember {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  margin-left: 2px;
-  font-size: 14px;
-  color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-left: 2px;
+    font-size: 14px;
+    color: #ccc;
 }
 
 .remember input {
-  width: auto;      
-  margin: 0;      
-  accent-color: #EE4B2B;
+    width: auto;
+    margin: 0;
+    accent-color: #EE4B2B;
 }
 
 .toggle-link {
-  margin-top: 15px;
-  font-size: 14px;
-  cursor: pointer;
-  color: #EE4B2B;
-  text-decoration: underline;
+    margin-top: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #EE4B2B;
+    text-decoration: underline;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
-
 
 /* Small tablets & large phones (max-width: 600px) */
 @media all and (max-width: 600px) {
-  .auth-container {
-    max-width: 320px;
-    padding: 25px 18px;
-  }
+    .auth-container {
+        max-width: 320px;
+        padding: 25px 18px;
+    }
 
-  .auth-container h1 {
-    font-size: 22px;
-  }
+    .auth-container h1 {
+        font-size: 22px;
+    }
 
-  input, button {
-    font-size: 14px;
-    padding: 10px 12px;
-  }
+    input,
+    button,
+    .google-btn {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
 
-  .toggle-link {
-    font-size: 13px;
-  }
+    .toggle-link {
+        font-size: 13px;
+    }
 }
 
 /* Tablets (max-width: 900px) */
 @media all and (max-width: 900px) {
-  .auth-container {
-    max-width: 360px;
-    padding: 35px 24px;
-  }
+    .auth-container {
+        max-width: 360px;
+        padding: 35px 24px;
+    }
 
-  .auth-container h1 {
-    font-size: 26px;
-  }
+    .auth-container h1 {
+        font-size: 26px;
+    }
 
-  input, button {
-    font-size: 15px;
-    padding: 12px;
-  }
+    input,
+    button,
+    .google-btn {
+        font-size: 15px;
+        padding: 12px;
+    }
 }
 
 /* Small laptops (max-width: 1200px) */
 @media all and (max-width: 1200px) {
-  .auth-container {
-    max-width: 400px;
-  }
+    .auth-container {
+        max-width: 400px;
+    }
 
-  .auth-container h1 {
-    font-size: 28px;
-  }
+    .auth-container h1 {
+        font-size: 28px;
+    }
 }
-

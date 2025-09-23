@@ -7,6 +7,8 @@
   <title>Gamaro</title>
   <link href="assets/logo.png" rel="icon">
   <link rel="stylesheet" href="index.css">
+
+  </style>
 </head>
 
 <body>
@@ -32,6 +34,15 @@
         </div>
 
         <button type="submit">Login</button>
+
+        <!-- Divider -->
+        <div class="divider"><span>OR</span></div>
+
+        <!-- OR Google Login -->
+        <div class="google-btn">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="">
+          Sign in with Google
+        </div>
       </form>
       <div class="toggle-link" onclick="toggleForms()">Don't have an account? Signup</div>
     </div>
@@ -44,9 +55,19 @@
         <input type="password" placeholder="Password" required>
         <input type="password" placeholder="Confirm Password" required>
         <button type="submit">Signup</button>
+
+        <!-- Divider -->
+        <div class="divider"><span>OR</span></div>
+
+        <!-- OR Google Signup -->
+        <div class="google-btn">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="">
+          Sign up with Google
+        </div>
       </form>
       <div class="toggle-link" onclick="toggleForms()">Already have an account? Login</div>
     </div>
+
   </div>
 
   <script>
