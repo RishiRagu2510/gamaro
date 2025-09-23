@@ -32,12 +32,9 @@
           <input type="checkbox" id="remember">
           <label for="remember">Remember me</label>
         </div>
-
         <button type="submit">Login</button>
-
         <!-- Divider -->
         <div class="divider"><span>OR</span></div>
-
         <!-- OR Google Login -->
         <div class="google-btn">
           <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="">
@@ -91,8 +88,8 @@
       function password() {
         if (pwd.value === cpwd.value) {
           return true;
-        } else {
-          alert("Passwords do not match");
+        } 
+        else {
           return false;
         }
       }
@@ -101,10 +98,12 @@
       function checkPasswords() {
         if (cpwd.value === "" && pwd.value === "") {
           pwdMsg.textContent = "";
-        } else if (pwd.value === cpwd.value) {
+        } 
+        else if (pwd.value === cpwd.value) {
           pwdMsg.textContent = "Passwords match";
           pwdMsg.style.color = "limegreen";
-        } else {
+        } 
+        else {
           pwdMsg.textContent = "Passwords do not match";
           pwdMsg.style.color = "red";
         }
