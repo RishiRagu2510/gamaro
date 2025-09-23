@@ -51,8 +51,8 @@
       <form onsubmit="return password()">
         <input type="text" placeholder="Username" required>
         <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required class="password" id="mainpwd">
-        <input type="password" placeholder="Confirm Password" required class="password" id="confirmpwd">
+        <input type="password" placeholder="Password" minlength="8" required class="password" id="mainpwd">
+        <input type="password" placeholder="Confirm Password" minlength="8" required class="password" id="confirmpwd">
         <!-- Message area -->
         <p id="pwd-message"></p>
 
@@ -69,7 +69,6 @@
       </form>
       <div class="toggle-link" onclick="toggleForms()">Already have an account? Login</div>
     </div>
-
     <script>
       const loginBox = document.getElementById('login-box');
       const signupBox = document.getElementById('signup-box');
@@ -98,9 +97,9 @@
         }
       }
 
-      // Real-time check
-      cpwd.addEventListener('input', () => {
-        if (cpwd.value === "") {
+      // Function to check match
+      function checkPasswords() {
+        if (cpwd.value === "" && pwd.value === "") {
           pwdMsg.textContent = "";
         } else if (pwd.value === cpwd.value) {
           pwdMsg.textContent = "Passwords match";
@@ -109,8 +108,13 @@
           pwdMsg.textContent = "Passwords do not match";
           pwdMsg.style.color = "red";
         }
-      });
+      }
+
+      // Real-time check on both fields
+      pwd.addEventListener('input', checkPasswords);
+      cpwd.addEventListener('input', checkPasswords);
     </script>
+
 
 </body>
 
