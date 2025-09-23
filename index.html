@@ -46,14 +46,16 @@
       </form>
       <div class="toggle-link" onclick="toggleForms()">Don't have an account? Signup</div>
     </div>
-
     <!-- Signup Form -->
     <div id="signup-box" class="hidden">
-      <form>
+      <form onsubmit="return password()">
         <input type="text" placeholder="Username" required>
         <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <input type="password" placeholder="Confirm Password" required>
+        <input type="password" placeholder="Password" required class="password" id="mainpwd">
+        <input type="password" placeholder="Confirm Password" required class="password" id="confirmpwd">
+        <!-- Message area -->
+        <p id="pwd-message"></p>
+
         <button type="submit">Signup</button>
 
         <!-- Divider -->
@@ -68,24 +70,48 @@
       <div class="toggle-link" onclick="toggleForms()">Already have an account? Login</div>
     </div>
 
-  </div>
+    <script>
+      const loginBox = document.getElementById('login-box');
+      const signupBox = document.getElementById('signup-box');
+      const formTitle = document.getElementById('form-title');
+      const pwd = document.getElementById('mainpwd');
+      const cpwd = document.getElementById('confirmpwd');
+      const pwdMsg = document.getElementById('pwd-message');
 
-  <script>
-    const loginBox = document.getElementById('login-box');
-    const signupBox = document.getElementById('signup-box');
-    const formTitle = document.getElementById('form-title');
+      function toggleForms() {
+        loginBox.classList.toggle('hidden');
+        signupBox.classList.toggle('hidden');
 
-    function toggleForms() {
-      loginBox.classList.toggle('hidden');
-      signupBox.classList.toggle('hidden');
-
-      if (loginBox.classList.contains('hidden')) {
-        formTitle.textContent = 'Gamaro Signup';
-      } else {
-        formTitle.textContent = 'Gamaro Login';
+        if (loginBox.classList.contains('hidden')) {
+          formTitle.textContent = 'Gamaro Signup';
+        } else {
+          formTitle.textContent = 'Gamaro Login';
+        }
       }
-    }
-  </script>
+
+      function password() {
+        if (pwd.value === cpwd.value) {
+          return true;
+        } else {
+          alert("Passwords do not match");
+          return false;
+        }
+      }
+
+      // Real-time check
+      cpwd.addEventListener('input', () => {
+        if (cpwd.value === "") {
+          pwdMsg.textContent = "";
+        } else if (pwd.value === cpwd.value) {
+          pwdMsg.textContent = "Passwords match";
+          pwdMsg.style.color = "limegreen";
+        } else {
+          pwdMsg.textContent = "Passwords do not match";
+          pwdMsg.style.color = "red";
+        }
+      });
+    </script>
+
 </body>
 
 </html>

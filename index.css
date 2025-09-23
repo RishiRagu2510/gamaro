@@ -164,6 +164,8 @@ button:hover {
     display: none;
 }
 
+
+
 /* Small tablets & large phones (max-width: 600px) */
 @media all and (max-width: 600px) {
     .auth-container {
