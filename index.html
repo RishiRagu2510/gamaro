@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,41 @@
   <link href="assets/logo.png" rel="icon">
   <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
+  <!-- Background video -->
   <video autoplay muted loop id="bg-video">
     <source src="assets/loginbg.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div class="overlay"></div>
 
+  <!-- Auth container -->
   <div class="auth-container">
     <h1 id="form-title">Gamaro Login</h1>
 
-    <div id="login-form">
+    <!-- Login Form -->
+    <div id="login-box">
       <form action="home.html">
         <input type="text" placeholder="Username / Email" required>
         <input type="password" placeholder="Password" required>
+        <div class="remember">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div>
+
         <button type="submit">Login</button>
       </form>
       <div class="toggle-link" onclick="toggleForms()">Don't have an account? Signup</div>
     </div>
-    <div id="signup-form" class="hidden">
-      <form id="login-form">
+
+    <!-- Signup Form -->
+    <div id="signup-box" class="hidden">
+      <form>
         <input type="text" placeholder="Username" required>
         <input type="email" placeholder="Email" required>
         <input type="password" placeholder="Password" required>
-        <input type="password" placeholder="Confirm-Password" required>
+        <input type="password" placeholder="Confirm Password" required>
         <button type="submit">Signup</button>
       </form>
       <div class="toggle-link" onclick="toggleForms()">Already have an account? Login</div>
@@ -38,20 +50,21 @@
   </div>
 
   <script>
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
+    const loginBox = document.getElementById('login-box');
+    const signupBox = document.getElementById('signup-box');
     const formTitle = document.getElementById('form-title');
 
     function toggleForms() {
-      loginForm.classList.toggle('hidden');
-      signupForm.classList.toggle('hidden');
-      if (loginForm.classList.contains('hidden')) {
+      loginBox.classList.toggle('hidden');
+      signupBox.classList.toggle('hidden');
+
+      if (loginBox.classList.contains('hidden')) {
         formTitle.textContent = 'Gamaro Signup';
       } else {
         formTitle.textContent = 'Gamaro Login';
       }
     }
-    
   </script>
 </body>
+
 </html>
