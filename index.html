@@ -24,7 +24,6 @@
     <h1 id="form-title">Gamaro Login</h1>
 
     <!-- Login Form -->
-    <!-- Login Form -->
     <div id="login-box">
       <form id="login-form">
         <input type="text" placeholder="Username / Email" id="login-username" required>
@@ -35,8 +34,10 @@
           <label for="remember">Remember me</label>
         </div>
         <button type="submit">Login</button>
+
         <!-- Divider -->
         <div class="divider"><span>OR</span></div>
+
         <!-- OR Google Login -->
         <div class="google-btn">
           <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="">
@@ -45,6 +46,7 @@
       </form>
       <div class="toggle-link" onclick="toggleForms()">Don't have an account? Signup</div>
     </div>
+
     <!-- Signup Form -->
     <div id="signup-box" class="hidden">
       <form onsubmit="return password()">
@@ -52,6 +54,7 @@
         <input type="email" placeholder="Email" required>
         <input type="password" placeholder="Password" minlength="8" required class="password" id="mainpwd">
         <input type="password" placeholder="Confirm Password" minlength="8" required class="password" id="confirmpwd">
+        
         <!-- Message area -->
         <p id="pwd-message"></p>
 
@@ -127,7 +130,7 @@
         const username = loginUsername.value;
         const password = loginPassword.value;
 
-        const correctUsername = "rishi";
+        const correctUsername = "Rishi";
         const correctPassword = "25102003@Ri";
 
         if (username === correctUsername && password === correctPassword) {
