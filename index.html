@@ -24,10 +24,12 @@
     <h1 id="form-title">Gamaro Login</h1>
 
     <!-- Login Form -->
+    <!-- Login Form -->
     <div id="login-box">
-      <form action="home.html">
-        <input type="text" placeholder="Username / Email" required>
-        <input type="password" placeholder="Password" minlength="8" required>
+      <form id="login-form">
+        <input type="text" placeholder="Username / Email" id="login-username" required>
+        <input type="password" placeholder="Password" id="login-password" minlength="8" required>
+        <p id="login-error" style="color:red; margin-top:10px;"></p>
         <div class="remember">
           <input type="checkbox" id="remember">
           <label for="remember">Remember me</label>
@@ -88,7 +90,7 @@
       function password() {
         if (pwd.value === cpwd.value) {
           return true;
-        } 
+        }
         else {
           return false;
         }
@@ -98,11 +100,11 @@
       function checkPasswords() {
         if (cpwd.value === "" && pwd.value === "") {
           pwdMsg.textContent = "";
-        } 
+        }
         else if (pwd.value === cpwd.value) {
           pwdMsg.textContent = "Passwords match";
           pwdMsg.style.color = "limegreen";
-        } 
+        }
         else {
           pwdMsg.textContent = "Passwords do not match";
           pwdMsg.style.color = "red";
@@ -112,6 +114,35 @@
       // Real-time check on both fields
       pwd.addEventListener('input', checkPasswords);
       cpwd.addEventListener('input', checkPasswords);
+
+      // login check
+      const loginForm = document.getElementById('login-form');
+      const loginUsername = document.getElementById('login-username');
+      const loginPassword = document.getElementById('login-password');
+      const loginError = document.getElementById('login-error');
+
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault(); 
+
+        const username = loginUsername.value;
+        const password = loginPassword.value;
+
+        const correctUsername = "rishi";
+        const correctPassword = "25102003@Ri";
+
+        if (username === correctUsername && password === correctPassword) {
+          window.location.href = "home.html";
+        }
+        else if (username !== correctUsername && password !== correctPassword) {
+          loginError.textContent = "Username and password are wrong";
+        }
+        else if (username !== correctUsername) {
+          loginError.textContent = "Username is wrong";
+        }
+        else if (password !== correctPassword) {
+          loginError.textContent = "Password is wrong";
+        }
+      });
     </script>
 
 
