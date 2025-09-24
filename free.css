@@ -351,16 +351,15 @@ main h1 {
   border-radius: 20px;
   cursor: pointer;
   border: none;
-  color: white;
+  color: gold;
   font-weight: bold;
   transition: all 0.5s;
 }
-
 .filter button:hover {
   background-color: white;
   color: #EE4B2B;
   transform: translateY(-2px);
-  box-shadow: 0 0px 10px #EE4B2B;
+  box-shadow: 0 1px 10px #EE4B2B;
 }
 
 #trailers {
